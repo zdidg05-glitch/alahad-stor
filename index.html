@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العهد - متجر Apple الرسمي في عمان</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ar">العربية</button>
+        <button class="lang-btn" data-lang="en">English</button>
+    </div>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <p data-ar="احصل على توصيل مجاني لجميع الطلبات في سلطنة عمان" 
+           data-en="Get free delivery on all orders in Oman">
+           احصل على توصيل مجاني لجميع الطلبات في سلطنة عمان
+        </p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🍎</div>
+            <ul class="nav-links">
+                <li><a href="#home" data-ar="المتجر" data-en="Store">المتجر</a></li>
+                <li><a href="#macbook" data-ar="Mac" data-en="Mac">Mac</a></li>
+                <li><a href="#ipad" data-ar="iPad" data-en="iPad">iPad</a></li>
+                <li><a href="#iphone" data-ar="iPhone" data-en="iPhone">iPhone</a></li>
+                <li><a href="#accessories" data-ar="الإكسسوارات" data-en="Accessories">الإكسسوارات</a></li>
+                <li><a href="#contact" data-ar="الدعم" data-en="Support">الدعم</a></li>
+            </ul>
+            <div class="nav-icons">
+                <span class="search-icon">
+                    <svg width="15" height="44" viewBox="0 0 15 44"><path d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z"></path></svg>
+                </span>
+                <span class="cart-icon">
+                    <svg width="14" height="44" viewBox="0 0 14 44"><path d="M11.05,19.51H2.95c-0.55,0-1-0.45-1-1s0.45-1,1-1h8.1c0.55,0,1,0.45,1,1S11.6,19.51,11.05,19.51z M12.05,22.51H1.95 c-0.55,0-1,0.45-1,1s0.45,1,1,1h10.1c0.55,0,1-0.45,1-1S12.6,22.51,12.05,22.51z M12.05,26.51H1.95c-0.55,0-1,0.45-1,1 s0.45,1,1,1h10.1c0.55,0,1-0.45,1-1S12.6,26.51,12.05,26.51z"></path></svg>
+                    <span class="cart-count">0</span>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 3D Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Hero Section - iPhone 15 Pro -->
+    <section id="home" class="hero-main">
+        <div class="hero-content-center">
+            <p class="hero-new animate-fade" data-ar="جديد" data-en="New">جديد</p>
+            <h1 class="hero-title-large animate-slide" data-ar="iPhone 15 Pro" data-en="iPhone 15 Pro">iPhone 15 Pro</h1>
+            <p class="hero-subtitle-large animate-fade" data-ar="التيتانيوم. قوي جداً. خفيف جداً. Pro جداً." data-en="Titanium. So strong. So light. So Pro.">التيتانيوم. قوي جداً. خفيف جداً. Pro جداً.</p>
+            <div class="hero-links animate-fade">
+                <a href="#iphone" class="link-primary" data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</a>
+                <a href="#iphone" class="link-secondary" data-ar="اشترِ" data-en="Buy">اشترِ</a>
+            </div>
+            <div class="hero-image-large parallax-img">
+                <img src="https://www.apple.com/v/iphone-15-pro/c/images/overview/closer-look/all_colors__eppvgjxlg5uu_large.jpg" alt="iPhone 15 Pro" class="floating-device">
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section 2 - MacBook Pro -->
+    <section class="hero-secondary dark-section">
+        <div class="hero-content-center">
+            <h2 class="hero-title-medium animate-slide" data-ar="MacBook Pro" data-en="MacBook Pro">MacBook Pro</h2>
+            <p class="hero-subtitle-medium animate-fade" data-ar="قوة خارقة. أداء استثنائي." data-en="Supercharged by M3 Pro and M3 Max.">قوة خارقة. أداء استثنائي.</p>
+            <div class="hero-links animate-fade">
+                <a href="#macbook" class="link-primary white" data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</a>
+                <a href="#macbook" class="link-secondary white" data-ar="اشترِ" data-en="Buy">اشترِ</a>
+            </div>
+            <div class="hero-image-medium parallax-img">
+                <img src="https://www.apple.com/v/macbook-pro/aj/images/overview/hero/intro__ewz1ro7xs14y_large.jpg" alt="MacBook Pro" class="floating-device">
+            </div>
+        </div>
+    </section>
+
+    <!-- Two Column Heroes -->
+    <div class="hero-grid">
+        <section class="hero-small">
+            <div class="hero-content-center">
+                <h2 class="hero-title-small animate-slide" data-ar="iPad Pro" data-en="iPad Pro">iPad Pro</h2>
+                <p class="hero-subtitle-small animate-fade" data-ar="رقيق بشكل لا يصدق. قوي بشكل لا يصدق." data-en="Unbelievably thin. Incredibly powerful.">رقيق بشكل لا يصدق. قوي بشكل لا يصدق.</p>
+                <div class="hero-links animate-fade">
+                    <a href="#ipad" class="link-primary" data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</a>
+                    <a href="#ipad" class="link-secondary" data-ar="اشترِ" data-en="Buy">اشترِ</a>
+                </div>
+                <div class="hero-image-small parallax-img">
+                    <img src="https://www.apple.com/v/ipad-pro/aj/images/overview/hero/hero_endframe__bq8iqvhf2oi2_large.jpg" alt="iPad Pro" class="floating-device">
+                </div>
+            </div>
+        </section>
+
+        <section class="hero-small dark-section">
+            <div class="hero-content-center">
+                <h2 class="hero-title-small white animate-slide" data-ar="AirPods Pro" data-en="AirPods Pro">AirPods Pro</h2>
+                <p class="hero-subtitle-small white animate-fade" data-ar="صوت غامر. إلغاء ضوضاء نشط." data-en="Adaptive Audio. Now playing.">صوت غامر. إلغاء ضوضاء نشط.</p>
+                <div class="hero-links animate-fade">
+                    <a href="#accessories" class="link-primary white" data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</a>
+                    <a href="#accessories" class="link-secondary white" data-ar="اشترِ" data-en="Buy">اشترِ</a>
+                </div>
+                <div class="hero-image-small parallax-img">
+                    <img src="https://www.apple.com/v/airpods-pro/j/images/overview/hero__ge466qb2jmmm_large.jpg" alt="AirPods Pro" class="floating-device">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- iPhone Section -->
+    <section id="iphone" class="products-section">
+        <div class="section-header">
+            <h2 class="section-title" data-ar="اختر طراز iPhone المناسب لك" data-en="Which iPhone is right for you?">اختر طراز iPhone المناسب لك</h2>
+        </div>
+        <div class="products-carousel">
+            <div class="product-card-apple scroll-reveal">
+                <div class="product-colors">
+                    <span class="color-dot" style="background: #1d1d1f" title="Black Titanium"></span>
+                    <span class="color-dot" style="background: #f5f5f7" title="White Titanium"></span>
+                    <span class="color-dot" style="background: #53565a" title="Blue Titanium"></span>
+                    <span class="color-dot" style="background: #e8e4d8" title="Natural Titanium"></span>
+                </div>
+                <div class="product-image-apple">
+                    <img src="https://www.apple.com/v/iphone/home/bv/images/overview/select/iphone_15_pro__bpnjhcrxofqu_large.png" alt="iPhone 15 Pro Max" class="product-img-hover">
+                </div>
+                <div class="product-badge-new" data-ar="جديد" data-en="New">جديد</div>
+                <h3 class="product-name">iPhone 15 Pro Max</h3>
+                <p class="product-tagline" data-ar="التيتانيوم الأقوى" data-en="The ultimate iPhone">التيتانيوم الأقوى</p>
+                <p class="product-price" data-ar="من 499 ر.ع." data-en="From OMR 499">من 499 ر.ع.</p>
+                <div class="product-actions">
+                    <button class="btn-buy" data-ar="اشترِ" data-en="Buy">اشترِ</button>
+                    <a href="#" class="link-learn" data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card-apple scroll-reveal">
+                <div class="product-colors">
+                    <span class="color-dot" style="background: #1d1d1f"></span>
+                    <span class="color-dot" style="background: #f5f5f7"></span>
+                    <span class="color-dot" style="background: #53565a"></span>
+                    <span class="color-dot" style="background: #e8e4d8"></span>
+                </div>
+                <div class="product-image-apple">
+                    <img src="https://www.apple.com/v/iphone/home/bv/images/overview/select/iphone_15_pro__bpnjhcrxofqu_large.png" alt="iPhone 15 Pro" class="product-img-hover">
+                </div>
+                <div class="product-badge-new" data-ar="جديد" data-en="New">جديد</div>
+                <h3 class="product-name">iPhone 15 Pro</h3>
+                <p class="product-tagline" data-ar="التيتانيوم القوي" data-en="So strong. So light. So Pro.">التيتانيوم القوي</p>
+                <p class="product-price" data-ar="من 429 ر.ع." data-en="From OMR 429">من 429 ر.ع.</p>
+                <div class="product-actions">
+                    <button class="btn-buy" data-ar="اشترِ" data-en="Buy">اشترِ</button>
+                    <a href="#" class="link-learn" data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card-apple scroll-reveal">
+                <div class="product-colors">
+                    <span class="color-dot" style="background: #ffc0cb"></span>
+                    <span class="color-dot" style="background: #ffff00"></span>
+                    <span class="color-dot" style="background: #90ee90"></span>
+                    <span class="color-dot" style="background: #0071e3"></span>
+                    <span class="color-dot" style="background: #1d1d1f"></span>
+                </div>
+                <div class="product-image-apple">
+                    <img src="https://www.apple.com/v/iphone/home/bv/images/overview/select/iphone_15__fm0znbfqwmie_large.png" alt="iPhone 15" class="product-img-hover">
+                </div>
+                <div class="product-badge-new" data-ar="جديد" data-en="New">جديد</div>
+                <h3 class="product-name">iPhone 15</h3>
+                <p class="product-tagline" data-ar="جديد كلياً" data-en="A total powerhouse">جديد كلياً</p>
+                <p class="product-price" data-ar="من 349 ر.ع." data-en="From OMR 349">من 349 ر.ع.</p>
+                <div class="product-actions">
+                    <button class="btn-buy" data-ar="اشترِ" data-en="Buy">اشترِ</button>
+                    <a href="#" class="link-learn" data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card-apple scroll-reveal">
+                <div class="product-colors">
+                    <span class="color-dot" style="background: #800080"></span>
+                    <span class="color-dot" style="background: #0071e3"></span>
+                    <span class="color-dot" style="background: #1d1d1f"></span>
+                    <span class="color-dot" style="background: #ff0000"></span>
+                    <span class="color-dot" style="background: #ffff00"></span>
+                </div>
+                <div class="product-image-apple">
+                    <img src="https://www.apple.com/v/iphone/home/bv/images/overview/select/iphone_14__cjgvgyn9cquu_large.png" alt="iPhone 14" class="product-img-hover">
+                </div>
+                <h3 class="product-name">iPhone 14</h3>
+                <p class="product-tagline" data-ar="قوي ومذهل" data-en="As amazing as ever">قوي ومذهل</p>
+                <p class="product-price" data-ar="من 289 ر.ع." data-en="From OMR 289">من 289 ر.ع.</p>
+                <div class="product-actions">
+                    <button class="btn-buy" data-ar="اشترِ" data-en="Buy">اشترِ</button>
+                    <a href="#" class="link-learn" data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MacBook Section -->
+    <section id="macbook" class="products-section gray-bg">
+        <div class="section-header">
+            <h2 class="section-title" data-ar="اختر طراز Mac المناسب لك" data-en="Which Mac is right for you?">اختر طراز Mac المناسب لك</h2>
+        </div>
+        <div class="products-carousel">
+            <div class="product-card-apple scroll-reveal">
+                <div class="product-image-apple">
+                    <img src="https://www.apple.com/v/mac/home/ca/images/overview/select/product_tile_mbp_16__yefqnvtc7u2u_large.png" alt="MacBook Pro 16" class="product-img-hover">
+                </div>
+                <div class="product-badge-pro">Pro</div>
+                <h3 class="product-name">MacBook Pro 16"</h3>
+                <p class="product-tagline" data-ar="قوة خارقة للمحترفين" data-en="The most powerful MacBook Pro ever">قوة خارقة للمحترفين</p>
+                <p class="product-price" data-ar="من 1,119 ر.ع." data-en="From OMR 1,119">من 1,119 ر.ع.</p>
+                <div class="product-specs">
+                    <p data-ar="شريحة M3 Max" data-en="M3 Max chip">شريحة M3 Max</p>
+                    <p data-ar="حتى 128 جيجابايت ذاكرة" data-en="Up to 128GB memory">حتى 128 جيجابايت ذاكرة</p>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy" data-ar="اشترِ" data-en="Buy">اشترِ</button>
+                    <a href="#" class="link-learn" data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card-apple scroll-reveal">
+                <div class="product-image-apple">
+                    <img src="https://www.apple.com/v/mac/home/ca/images/overview/select/product_tile_mbp_14__bkl8zusnkpw2_large.png" alt="MacBook Pro 14" class="product-img-hover">
+                </div>
+                <div class="product-badge-pro">Pro</div>
+                <h3 class="product-name">MacBook Pro 14"</h3>
+                <p class="product-tagline" data-ar="أداء Pro محمول" data-en="Pro performance. Portable design.">أداء Pro محمول</p>
+                <p class="product-price" data-ar="من 849 ر.ع." data-en="From OMR 849">من 849 ر.ع.</p>
+                <div class="product-specs">
+                    <p data-ar="شريحة M3 Pro" data-en="M3 Pro chip">شريحة M3 Pro</p>
+                    <p data-ar="حتى 36 جيجابايت ذاكرة" data-en="Up to 36GB memory">حتى 36 جيجابايت ذاكرة</p>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy" data-ar="اشترِ" data-en="Buy">اشترِ</button>
+                    <a href="#" class="link-learn" data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card-apple scroll-reveal">
+                <div class="product-image-apple">
+                    <img src="https://www.apple.com/v/mac/home/ca/images/overview/select/product_tile_mba_15__bvlnhz3m7y0y_large.png" alt="MacBook Air 15" class="product-img-hover">
+                </div>
+                <h3 class="product-name">MacBook Air 15"</h3>
+                <p class="product-tagline" data-ar="رقيق وخفيف بشكل مذهل" data-en="Impressively big. Impossibly thin.">رقيق وخفيف بشكل مذهل</p>
+                <p class="product-price" data-ar="من 579 ر.ع." data-en="From OMR 579">من 579 ر.ع.</p>
+                <div class="product-specs">
+                    <p data-ar="شريحة M2" data-en="M2 chip">شريحة M2</p>
+                    <p data-ar="حتى 24 جيجابايت ذاكرة" data-en="Up to 24GB memory">حتى 24 جيجابايت ذاكرة</p>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy" data-ar="اشترِ" data-en="Buy">اشترِ</button>
+                    <a href="#" class="link-learn" data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card-apple scroll-reveal">
+                <div class="product-image-apple">
+                    <img src="https://www.apple.com/v/mac/home/ca/images/overview/select/product_tile_mba_13__e7a7u9k0zuie_large.png" alt="MacBook Air 13" class="product-img-hover">
+                </div>
+                <h3 class="product-name">MacBook Air 13"</h3>
+                <p class="product-tagline" data-ar="مثالي للاستخدام اليومي" data-en="Strikingly thin and fast">مثالي للاستخدام اليومي</p>
+                <p class="product-price" data-ar="من 459 ر.ع." data-en="From OMR 459">من 459 ر.ع.</p>
+                <div class="product-specs">
+                    <p data-ar="شريحة M2" data-en="M2 chip">شريحة M2</p>
+                    <p data-ar="حتى 24 جيجابايت ذاكرة" data-en="Up to 24GB memory">حتى 24 جيجابايت ذاكرة</p>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy" data-ar="اشترِ" data-en="Buy">اشترِ</button>
+                    <a href="#" class="link-learn" data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- iPad Section -->
+    <section id="ipad" class="products-section">
+        <div class="section-header">
+            <h2 class="section-title" data-ar="اختر طراز iPad المناسب لك" data-en="Which iPad is right for you?">اختر طراز iPad المناسب لك</h2>
+        </div>
+        <div class="products-carousel">
+            <div class="product-card-apple scroll-reveal">
+                <div class="product-image-apple">
+                    <img src="https://www.apple.com/v/ipad/home/ck/images/overview/select/product-tile/pt_ipad_pro__6bgrkek0jnm2_large.png" alt="iPad Pro" class="product-img-hover">
+                </div>
+                <div class="product-badge-pro">Pro</div>
+                <h3 class="product-name">iPad Pro</h3>
+                <p class="product-tagline" data-ar="الأداء الأقصى" data-en="Ultimate iPad experience">الأداء الأقصى</p>
+                <p class="product-price" data-ar="من 499 ر.ع." data-en="From OMR 499">من 499 ر.ع.</p>
+                <div class="product-specs">
+                    <p data-ar="شريحة M2" data-en="M2 chip">شريحة M2</p>
+                    <p data-ar="شاشة Liquid Retina XDR" data-en="Liquid Retina XDR display">شاشة Liquid Retina XDR</p>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy" data-ar="اشترِ" data-en="Buy">اشترِ</button>
+                    <a href="#" class="link-learn" data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card-apple scroll-reveal">
+                <div class="product-image-apple">
+                    <img src="https://www.apple.com/v/ipad/home/ck/images/overview/select/product-tile/pt_ipad_air__cr381zljqdiu_large.png" alt="iPad Air" class="product-img-hover">
+                </div>
+                <h3 class="product-name">iPad Air</h3>
+                <p class="product-tagline" data-ar="خفيف وقوي" data-en="Serious performance. Surprisingly portable.">خفيف وقوي</p>
+                <p class="product-price" data-ar="من 269 ر.ع." data-en="From OMR 269">من 269 ر.ع.</p>
+                <div class="product-specs">
+                    <p data-ar="شريحة M1" data-en="M1 chip">شريحة M1</p>
+                    <p data-ar="شاشة Liquid Retina" data-en="Liquid Retina display">شاشة Liquid Retina</p>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy" data-ar="اشترِ" data-en="Buy">اشترِ</button>
+                    <a href="#" class="link-learn" data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card-apple scroll-reveal">
+                <div class="product-image-apple">
+                    <img src="https://www.apple.com/v/ipad/home/ck/images/overview/select/product-tile/pt_ipad_10th_gen__ej5p5x6yf2gm_large.png" alt="iPad" class="product-img-hover">
+                </div>
+                <h3 class="product-name">iPad</h3>
+                <p class="product-tagline" data-ar="متعدد الاستخدامات" data-en="The colorful, all‑screen iPad">متعدد الاستخدامات</p>
+                <p class="product-price" data-ar="من 169 ر.ع." data-en="From OMR 169">من 169 ر.ع.</p>
+                <div class="product-specs">
+                    <p data-ar="شريحة A14 Bionic" data-en="A14 Bionic chip">شريحة A14 Bionic</p>
+                    <p data-ar="شاشة Retina 10.9" data-en="10.9-inch Retina display">شاشة Retina 10.9"</p>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy" data-ar="اشترِ" data-en="Buy">اشترِ</button>
+                    <a href="#" class="link-learn" data-ar="اعرف المزيد" data-en="Learn more">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card-apple scroll-reveal">
+                <div class="product-image-apple">
+                    <img src="https://www.apple.com/v/ipad/home/ck/images/overview/select/product-tile/pt_ipad_mini__f3iy3qb

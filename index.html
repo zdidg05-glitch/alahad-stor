@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>العهد - متجر Apple الرسمي</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" onclick="switchLang('ar')">العربية</button>
+        <button class="lang-btn" onclick="switchLang('en')">English</button>
+    </div>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <p id="banner-text">احصل على توصيل مجاني لجميع الطلبات في سلطنة عمان</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">🍎</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link">المتجر</a></li>
+                <li><a href="#macbook" class="nav-link">Mac</a></li>
+                <li><a href="#ipad" class="nav-link">iPad</a></li>
+                <li><a href="#iphone" class="nav-link">iPhone</a></li>
+                <li><a href="#contact" class="nav-link">الدعم</a></li>
+            </ul>
+            <div class="nav-icons">
+                <span class="search-icon" onclick="showNotif('البحث قريباً 🔍')">
+                    <svg width="15" height="44" viewBox="0 0 15 44">
+                        <path d="M14.298,27.202l-3.87-3.87c0.701-0.929,1.122-2.081,1.122-3.332c0-3.06-2.489-5.55-5.55-5.55c-3.06,0-5.55,2.49-5.55,5.55 c0,3.061,2.49,5.55,5.55,5.55c1.251,0,2.403-0.421,3.332-1.122l3.87,3.87c0.151,0.151,0.35,0.228,0.548,0.228 s0.396-0.076,0.548-0.228C14.601,27.995,14.601,27.505,14.298,27.202z M1.55,20c0-2.454,1.997-4.45,4.45-4.45 c2.454,0,4.45,1.997,4.45,4.45S8.454,24.45,6,24.45C3.546,24.45,1.55,22.454,1.55,20z"></path>
+                    </svg>
+                </span>
+                <span class="cart-icon" onclick="showCart()">
+                    <svg width="14" height="44" viewBox="0 0 14 44">
+                        <path d="M11.05,19.51H2.95c-0.55,0-1-0.45-1-1s0.45-1,1-1h8.1c0.55,0,1,0.45,1,1S11.6,19.51,11.05,19.51z M12.05,22.51H1.95 c-0.55,0-1,0.45-1,1s0.45,1,1,1h10.1c0.55,0,1-0.45,1-1S12.6,22.51,12.05,22.51z M12.05,26.51H1.95c-0.55,0-1,0.45-1,1 s0.45,1,1,1h10.1c0.55,0,1-0.45,1-1S12.6,26.51,12.05,26.51z"></path>
+                    </svg>
+                    <span class="cart-count" id="cart-count">0</span>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - iPhone 15 Pro -->
+    <section id="home" class="hero-main">
+        <div class="hero-content">
+            <p class="hero-new fade-in">جديد</p>
+            <h1 class="hero-title slide-up">iPhone 15 Pro</h1>
+            <p class="hero-subtitle fade-in-delay">التيتانيوم. قوي جداً. خفيف جداً. Pro جداً.</p>
+            <div class="hero-links fade-in-delay-2">
+                <a href="javascript:void(0)" onclick="openProductDetail('iphone-15-pro')" class="link-primary">اعرف المزيد</a>
+                <a href="javascript:void(0)" onclick="addToCart('iPhone 15 Pro')" class="link-secondary">اشترِ</a>
+            </div>
+        </div>
+        <div class="hero-image parallax-element">
+            <img src="https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c516.png" alt="iPhone 15 Pro" class="floating-device">
+        </div>
+    </section>
+
+    <!-- MacBook Hero -->
+    <section class="hero-secondary dark-bg">
+        <div class="hero-content">
+            <h2 class="hero-title slide-up">MacBook Pro</h2>
+            <p class="hero-subtitle fade-in-delay">قوة خارقة بشريحة M3 Pro و M3 Max</p>
+            <div class="hero-links fade-in-delay-2">
+                <a href="javascript:void(0)" onclick="openProductDetail('macbook-pro')" class="link-primary white">اعرف المزيد</a>
+                <a href="javascript:void(0)" onclick="addToCart('MacBook Pro')" class="link-secondary white">اشترِ</a>
+            </div>
+        </div>
+        <div class="hero-image parallax-element">
+            <img src="https://www.freeiconspng.com/uploads/apple-brand-macbook-photo-20.png" alt="MacBook Pro" class="floating-device">
+        </div>
+    </section>
+
+    <!-- Two Column Grid -->
+    <div class="hero-grid">
+        <section class="hero-small light-bg">
+            <div class="hero-content">
+                <h2 class="hero-title-small slide-up">iPad Pro</h2>
+                <p class="hero-subtitle-small fade-in-delay">رقيق بشكل لا يصدق. قوي بشكل لا يصدق.</p>
+                <div class="hero-links fade-in-delay-2">
+                    <a href="javascript:void(0)" onclick="openProductDetail('ipad-pro')" class="link-primary">اعرف المزيد</a>
+                </div>
+            </div>
+            <img src="https://www.stickpng.com/assets/images/58428c4ca6515b1e0ad75ab1.png" alt="iPad Pro" class="floating-device parallax-element">
+        </section>
+
+        <section class="hero-small dark-bg">
+            <div class="hero-content">
+                <h2 class="hero-title-small white slide-up">AirPods Pro</h2>
+                <p class="hero-subtitle-small white fade-in-delay">الصوت التكيفي. يعمل الآن.</p>
+                <div class="hero-links fade-in-delay-2">
+                    <a href="javascript:void(0)" onclick="openProductDetail('airpods-pro')" class="link-primary white">اعرف المزيد</a>
+                </div>
+            </div>
+            <img src="https://www.stickpng.com/assets/images/58428bf1a6515b1e0ad75aa6.png" alt="AirPods Pro" class="floating-device parallax-element">
+        </section>
+    </div>
+
+    <!-- iPhone Products Section -->
+    <section id="iphone" class="products-section">
+        <div class="section-header">
+            <h2 class="section-title slide-up">اختر طراز iPhone المناسب لك</h2>
+        </div>
+        <div class="products-carousel">
+            <div class="product-card scroll-reveal" onclick="openProductDetail('iphone-15-pro-max')">
+                <div class="product-colors">
+                    <span class="color-dot active" style="background: #1d1d1f" data-color="أسود تيتانيوم"></span>
+                    <span class="color-dot" style="background: #f5f5f7" data-color="أبيض تيتانيوم"></span>
+                    <span class="color-dot" style="background: #53565a" data-color="أزرق تيتانيوم"></span>
+                    <span class="color-dot" style="background: #e8e4d8" data-color="تيتانيوم طبيعي"></span>
+                </div>
+                <div class="product-image">
+                    <img src="https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c516.png" alt="iPhone 15 Pro Max" class="product-img">
+                </div>
+                <div class="product-badge new">جديد</div>
+                <h3 class="product-name">iPhone 15 Pro Max</h3>
+                <p class="product-tagline">iPhone الأقوى على الإطلاق</p>
+                <p class="product-price">من 499 ر.ع.</p>
+                <div class="product-actions">
+                    <button class="btn-buy" onclick="event.stopPropagation(); addToCart('iPhone 15 Pro Max')">اشترِ</button>
+                    <a href="javascript:void(0)" onclick="event.stopPropagation(); openProductDetail('iphone-15-pro-max')" class="link-learn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card scroll-reveal" onclick="openProductDetail('iphone-15-pro')">
+                <div class="product-colors">
+                    <span class="color-dot active" style="background: #1d1d1f"></span>
+                    <span class="color-dot" style="background: #f5f5f7"></span>
+                    <span class="color-dot" style="background: #53565a"></span>
+                    <span class="color-dot" style="background: #e8e4d8"></span>
+                </div>
+                <div class="product-image">
+                    <img src="https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c516.png" alt="iPhone 15 Pro" class="product-img">
+                </div>
+                <div class="product-badge new">جديد</div>
+                <h3 class="product-name">iPhone 15 Pro Pro</h3>
+                <p class="product-tagline">قوي جداً. خفيف جداً. Pro جداً.</p>
+                <p class="product-price">من 429 ر.ع.</p>
+                <div class="product-actions">
+                    <button class="btn-buy" onclick="event.stopPropagation(); addToCart('iPhone 15 Pro')">اشترِ</button>
+                    <a href="javascript:void(0)" onclick="event.stopPropagation(); openProductDetail('iphone-15-pro')" class="link-learn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card scroll-reveal" onclick="openProductDetail('iphone-15')">
+                <div class="product-colors">
+                    <span class="color-dot" style="background: #ffc0cb"></span>
+                    <span class="color-dot active" style="background: #0071e3"></span>
+                    <span class="color-dot" style="background: #90ee90"></span>
+                    <span class="color-dot" style="background: #1d1d1f"></span>
+                </div>
+                <div class="product-image">
+                    <img src="https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c516.png" alt="iPhone 15" class="product-img">
+                </div>
+                <div class="product-badge new">جديد</div>
+                <h3 class="product-name">iPhone 15</h3>
+                <p class="product-tagline">قوة هائلة بشكل مذهل</p>
+                <p class="product-price">من 349 ر.ع.</p>
+                <div class="product-actions">
+                    <button class="btn-buy" onclick="event.stopPropagation(); addToCart('iPhone 15')">اشترِ</button>
+                    <a href="javascript:void(0)" onclick="event.stopPropagation(); openProductDetail('iphone-15')" class="link-learn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card scroll-reveal" onclick="openProductDetail('iphone-14')">
+                <div class="product-colors">
+                    <span class="color-dot" style="background: #800080"></span>
+                    <span class="color-dot active" style="background: #0071e3"></span>
+                    <span class="color-dot" style="background: #1d1d1f"></span>
+                    <span class="color-dot" style="background: #ff0000"></span>
+                </div>
+                <div class="product-image">
+                    <img src="https://www.stickpng.com/assets/images/580b57fcd9996e24bc43c516.png" alt="iPhone 14" class="product-img">
+                </div>
+                <h3 class="product-name">iPhone 14</h3>
+                <p class="product-tagline">رائع كما هو دائماً</p>
+                <p class="product-price">من 289 ر.ع.</p>
+                <div class="product-actions">
+                    <button class="btn-buy" onclick="event.stopPropagation(); addToCart('iPhone 14')">اشترِ</button>
+                    <a href="javascript:void(0)" onclick="event.stopPropagation(); openProductDetail('iphone-14')" class="link-learn">اعرف المزيد</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MacBook Products Section -->
+    <section id="macbook" class="products-section gray-bg">
+        <div class="section-header">
+            <h2 class="section-title slide-up">اختر طراز Mac المناسب لك</h2>
+        </div>
+        <div class="products-carousel">
+            <div class="product-card scroll-reveal" onclick="openProductDetail('macbook-pro-16')">
+                <div class="product-image">
+                    <img src="https://www.freeiconspng.com/uploads/apple-brand-macbook-photo-20.png" alt="MacBook Pro 16" class="product-img">
+                </div>
+                <div class="product-badge pro">Pro</div>
+                <h3 class="product-name">MacBook Pro 16"</h3>
+                <p class="product-tagline">أقوى MacBook Pro على الإطلاق</p>
+                <p class="product-price">من 1,119 ر.ع.</p>
+                <div class="product-specs">
+                    <p>شريحة M3 Max</p>
+                    <p>حتى 128 جيجابايت ذاكرة موحدة</p>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy" onclick="event.stopPropagation(); addToCart('MacBook Pro 16')">اشترِ</button>
+                    <a href="javascript:void(0)" onclick="event.stopPropagation(); openProductDetail('macbook-pro-16')" class="link-learn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card scroll-reveal" onclick="openProductDetail('macbook-pro-14')">
+                <div class="product-image">
+                    <img src="https://www.freeiconspng.com/uploads/apple-brand-macbook-photo-20.png" alt="MacBook Pro 14" class="product-img">
+                </div>
+                <div class="product-badge pro">Pro</div>
+                <h3 class="product-name">MacBook Pro 14"</h3>
+                <p class="product-tagline">أداء Pro. تصميم محمول.</p>
+                <p class="product-price">من 849 ر.ع.</p>
+                <div class="product-specs">
+                    <p>شريحة M3 Pro</p>
+                    <p>حتى 36 جيجابايت ذاكرة موحدة</p>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy" onclick="event.stopPropagation(); addToCart('MacBook Pro 14')">اشترِ</button>
+                    <a href="javascript:void(0)" onclick="event.stopPropagation(); openProductDetail('macbook-pro-14')" class="link-learn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card scroll-reveal" onclick="openProductDetail('macbook-air-15')">
+                <div class="product-image">
+                    <img src="https://pngimg.com/uploads/macbook/macbook_PNG8.png" alt="MacBook Air 15" class="product-img">
+                </div>
+                <h3 class="product-name">MacBook Air 15"</h3>
+                <p class="product-tagline">كبير بشكل مثير للإعجاب. رقيق بشكل مستحيل.</p>
+                <p class="product-price">من 579 ر.ع.</p>
+                <div class="product-specs">
+                    <p>شريحة M2</p>
+                    <p>حتى 24 جيجابايت ذاكرة موحدة</p>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy" onclick="event.stopPropagation(); addToCart('MacBook Air 15')">اشترِ</button>
+                    <a href="javascript:void(0)" onclick="event.stopPropagation(); openProductDetail('macbook-air-15')" class="link-learn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card scroll-reveal" onclick="openProductDetail('macbook-air-13')">
+                <div class="product-image">
+                    <img src="https://pngimg.com/uploads/macbook/macbook_PNG8.png" alt="MacBook Air 13" class="product-img">
+                </div>
+                <h3 class="product-name">MacBook Air 13"</h3>
+                <p class="product-tagline">رقيق بشكل مذهل وسريع</p>
+                <p class="product-price">من 459 ر.ع.</p>
+                <div class="product-specs">
+                    <p>شريحة M2</p>
+                    <p>حتى 24 جيجابايت ذاكرة موحدة</p>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy" onclick="event.stopPropagation(); addToCart('MacBook Air 13')">اشترِ</button>
+                    <a href="javascript:void(0)" onclick="event.stopPropagation(); openProductDetail('macbook-air-13')" class="link-learn">اعرف المزيد</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- iPad Products Section -->
+    <section id="ipad" class="products-section">
+        <div class="section-header">
+            <h2 class="section-title slide-up">اختر طراز iPad المناسب لك</h2>
+        </div>
+        <div class="products-carousel">
+            <div class="product-card scroll-reveal" onclick="openProductDetail('ipad-pro')">
+                <div class="product-image">
+                    <img src="https://www.stickpng.com/assets/images/58428c4ca6515b1e0ad75ab1.png" alt="iPad Pro" class="product-img">
+                </div>
+                <div class="product-badge pro">Pro</div>
+                <h3 class="product-name">iPad Pro</h3>
+                <p class="product-tagline">تجربة iPad الأقصى</p>
+                <p class="product-price">من 499 ر.ع.</p>
+                <div class="product-specs">
+                    <p>شريحة M2</p>
+                    <p>شاشة Liquid Retina XDR</p>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy" onclick="event.stopPropagation(); addToCart('iPad Pro')">اشترِ</button>
+                    <a href="javascript:void(0)" onclick="event.stopPropagation(); openProductDetail('ipad-pro')" class="link-learn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card scroll-reveal" onclick="openProductDetail('ipad-air')">
+                <div class="product-image">
+                    <img src="https://www.stickpng.com/assets/images/58428c4ca6515b1e0ad75ab1.png" alt="iPad Air" class="product-img">
+                </div>
+                <h3 class="product-name">iPad Air</h3>
+                <p class="product-tagline">أداء جدي. محمول بشكل مدهش.</p>
+                <p class="product-price">من 269 ر.ع.</p>
+                <div class="product-specs">
+                    <p>شريحة M1</p>
+                    <p>شاشة Liquid Retina</p>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy" onclick="event.stopPropagation(); addToCart('iPad Air')">اشترِ</button>
+                    <a href="javascript:void(0)" onclick="event.stopPropagation(); openProductDetail('ipad-air')" class="link-learn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card scroll-reveal" onclick="openProductDetail('ipad')">
+                <div class="product-image">
+                    <img src="https://www.stickpng.com/assets/images/58428c4ca6515b1e0ad75ab1.png" alt="iPad" class="product-img">
+                </div>
+                <h3 class="product-name">iPad</h3>
+                <p class="product-tagline">iPad الملون بشاشة كاملة</p>
+                <p class="product-price">من 169 ر.ع.</p>
+                <div class="product-specs">
+                    <p>شريحة A14 Bionic</p>
+                    <p>شاشة Retina 10.9 بوصة</p>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy" onclick="event.stopPropagation(); addToCart('iPad')">اشترِ</button>
+                    <a href="javascript:void(0)" onclick="event.stopPropagation(); openProductDetail('ipad')" class="link-learn">اعرف المزيد</a>
+                </div>
+            </div>
+
+            <div class="product-card scroll-reveal" onclick="openProductDetail('ipad-mini')">
+                <div class="product-image">
+                    <img src="https://www.stickpng.com/assets/images/58428c4ca6515b1e0ad75ab1.png" alt="iPad mini" class="product-img">
+                </div>
+                <h3 class="product-name">iPad mini</h3>
+                <p class="product-tagline">قوة هائلة. حجم صغير.</p>
+                <p class="product-price">من 229 ر.ع.</p>
+                <div class="product-specs">
+                    <p>شريحة A15 Bionic</p>
+                    <p>شاشة Retina 8.3 بوصة</p>
+                </div>
+                <div class="product-actions">
+                    <button class="btn-buy" onclick="event.stopPropagation(); addToCart('iPad mini')">اشترِ</button>
+                    <a href="javascript:void(0)" onclick="event.stopPropagation(); openProductDetail('ipad-mini')" class="link-learn">اعرف المزيد</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title slide-up">تواصل معنا</h2>
+        <div class="contact-grid">
+            <div class="contact-card scroll-reveal">
+                <div class="icon">📞</div>
+                <h3>اتصل بنا</h3>
+                <p>+968 77 975 128</p>
+                <p>+968 79 558 255</p>
+            </div>
+            <div class="contact-card scroll-reveal">
+                <div class="icon">📍</div>
+                <h3>زورنا</h3>
+                <p>مسقط - الموالح</p>
+                <p>سلطنة عمان</p>
+            </div>
+            <div class="contact-card scroll-reveal">
+                <div class="icon">🕒</div>
+                <h3>ساعات العمل</h3>
+                <p>السبت - الخميس: 10ص - 10م</p>
+                <p>الجمعة: 2م - 10م</p>
+            </div>
+            <div class="contact-card scroll-reveal">
+                <div class="icon">📱</div>
+                <h3>تابعنا</h3>
+                <p>Instagram: @alahad_z</p>
+                <p>Snapchat: alahad_z</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>العهد</h4>
+                <p>وجهتك الأولى لأجهزة Apple الأصلية في سلطنة عمان</p>
+            </div>
+            <div class="footer-section">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#iphone">iPhone</a></li>
+                    <li><a href="#macbook">Mac</a></li>
+                    <li><a href="#ipad">iPad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>تواصل معنا</h4>
+                <p>📞 +968 77 975 128</p>
+                <p>📍 مسقط - الموالح</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 العهد. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductDetail()">&times;</span>
+            <div id="product-detail-content">
+                <!-- Product details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
